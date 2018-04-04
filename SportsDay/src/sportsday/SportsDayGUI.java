@@ -27,19 +27,119 @@ public class SportsDayGUI extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane = new javax.swing.JTabbedPane();
+        Home_Panel = new javax.swing.JPanel();
+        Choose_Label = new javax.swing.JLabel();
+        View_Results_Button = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        Add_Event_Panel = new javax.swing.JPanel();
+        Add_Results_Panel = new javax.swing.JPanel();
+
+        jTabbedPane.setPreferredSize(new java.awt.Dimension(800, 600));
+
+        Choose_Label.setText("Choose event to display results");
+
+        View_Results_Button.setText("View Results");
+        View_Results_Button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                View_Results_ButtonActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(600, 800));
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout Home_PanelLayout = new javax.swing.GroupLayout(Home_Panel);
+        Home_Panel.setLayout(Home_PanelLayout);
+        Home_PanelLayout.setHorizontalGroup(
+            Home_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Home_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Home_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Home_PanelLayout.createSequentialGroup()
+                        .addGroup(Home_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Choose_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(51, 51, 51)
+                        .addComponent(View_Results_Button)))
+                .addContainerGap(276, Short.MAX_VALUE))
+        );
+        Home_PanelLayout.setVerticalGroup(
+            Home_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Home_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Home_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Choose_Label)
+                    .addComponent(View_Results_Button))
+                .addGap(40, 40, 40)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(215, Short.MAX_VALUE))
+        );
+
+        jTabbedPane.addTab("Home - View Results", Home_Panel);
+
+        javax.swing.GroupLayout Add_Event_PanelLayout = new javax.swing.GroupLayout(Add_Event_Panel);
+        Add_Event_Panel.setLayout(Add_Event_PanelLayout);
+        Add_Event_PanelLayout.setHorizontalGroup(
+            Add_Event_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 795, Short.MAX_VALUE)
+        );
+        Add_Event_PanelLayout.setVerticalGroup(
+            Add_Event_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 572, Short.MAX_VALUE)
+        );
+
+        jTabbedPane.addTab("Add New Event", Add_Event_Panel);
+
+        javax.swing.GroupLayout Add_Results_PanelLayout = new javax.swing.GroupLayout(Add_Results_Panel);
+        Add_Results_Panel.setLayout(Add_Results_PanelLayout);
+        Add_Results_PanelLayout.setHorizontalGroup(
+            Add_Results_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 795, Short.MAX_VALUE)
+        );
+        Add_Results_PanelLayout.setVerticalGroup(
+            Add_Results_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 572, Short.MAX_VALUE)
+        );
+
+        jTabbedPane.addTab("Add Event Results", Add_Results_Panel);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void View_Results_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_View_Results_ButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_View_Results_ButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Add_Event_Panel;
+    private javax.swing.JPanel Add_Results_Panel;
+    private javax.swing.JLabel Choose_Label;
+    private javax.swing.JPanel Home_Panel;
+    private javax.swing.JButton View_Results_Button;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
