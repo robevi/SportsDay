@@ -31,11 +31,36 @@ public class SportsDayGUI extends javax.swing.JPanel {
         Home_Panel = new javax.swing.JPanel();
         Choose_Label = new javax.swing.JLabel();
         View_Results_Button = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Select_ComboBox = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         Add_Event_Panel = new javax.swing.JPanel();
+        Age_Label = new javax.swing.JLabel();
+        Age_Select = new javax.swing.JComboBox<>();
+        Gender_Label = new javax.swing.JLabel();
+        Gender_Select = new javax.swing.JComboBox<>();
+        Event_Label_Add = new javax.swing.JLabel();
+        Time_Event_TextField = new javax.swing.JTextField();
+        Time_Event_Select = new javax.swing.JComboBox<>();
+        Save_Event = new javax.swing.JButton();
         Add_Results_Panel = new javax.swing.JPanel();
+        Event_Label_Results = new javax.swing.JLabel();
+        Event_Select = new javax.swing.JComboBox<>();
+        First_Name_Label = new javax.swing.JLabel();
+        First_Name_TextField = new javax.swing.JTextField();
+        Last_Name_Label = new javax.swing.JLabel();
+        Last_Name_Textfield = new javax.swing.JTextField();
+        results = new javax.swing.JLabel();
+        Metres_Label = new javax.swing.JLabel();
+        Minutes_Label = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        Cm_Label = new javax.swing.JLabel();
+        Seconds_Label = new javax.swing.JLabel();
+        jSpinner2 = new javax.swing.JSpinner();
+        Mm_Label = new javax.swing.JLabel();
+        Milliseconds_Label = new javax.swing.JLabel();
+        jSpinner3 = new javax.swing.JSpinner();
+        Save_Results = new javax.swing.JButton();
 
         jTabbedPane.setPreferredSize(new java.awt.Dimension(800, 600));
 
@@ -48,12 +73,13 @@ public class SportsDayGUI extends javax.swing.JPanel {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        Select_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jScrollPane1.setPreferredSize(new java.awt.Dimension(600, 800));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setPreferredSize(new java.awt.Dimension(164, 800));
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout Home_PanelLayout = new javax.swing.GroupLayout(Home_Panel);
@@ -66,7 +92,7 @@ public class SportsDayGUI extends javax.swing.JPanel {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(Home_PanelLayout.createSequentialGroup()
                         .addGroup(Home_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Select_ComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Choose_Label, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(51, 51, 51)
                         .addComponent(View_Results_Button)))
@@ -80,7 +106,7 @@ public class SportsDayGUI extends javax.swing.JPanel {
                     .addComponent(Choose_Label)
                     .addComponent(View_Results_Button))
                 .addGap(40, 40, 40)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Select_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(215, Short.MAX_VALUE))
@@ -88,28 +114,172 @@ public class SportsDayGUI extends javax.swing.JPanel {
 
         jTabbedPane.addTab("Home - View Results", Home_Panel);
 
+        Age_Label.setText("Age: (e.g. U15 - Under 15 year olds)");
+
+        Age_Select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "U11", "U12", "U13", "U14", "U15", "U16", "U17", "U18", "U19" }));
+
+        Gender_Label.setText("Gender:");
+
+        Gender_Select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boys", "Girls" }));
+
+        Event_Label_Add.setText("Event Title (e.g. Long Jump) and unit (i.e. Time hh:mm:ss and Distance M:cm): ");
+
+        Time_Event_Select.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time", "Distance" }));
+
+        Save_Event.setText("Save Event");
+        Save_Event.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Save_EventActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Add_Event_PanelLayout = new javax.swing.GroupLayout(Add_Event_Panel);
         Add_Event_Panel.setLayout(Add_Event_PanelLayout);
         Add_Event_PanelLayout.setHorizontalGroup(
             Add_Event_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
+            .addGroup(Add_Event_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Add_Event_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Age_Label)
+                    .addComponent(Gender_Label)
+                    .addComponent(Event_Label_Add)
+                    .addComponent(Save_Event, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Add_Event_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(Age_Select, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Gender_Select, javax.swing.GroupLayout.Alignment.LEADING, 0, 87, Short.MAX_VALUE))
+                    .addComponent(Time_Event_Select, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Time_Event_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(406, Short.MAX_VALUE))
         );
         Add_Event_PanelLayout.setVerticalGroup(
             Add_Event_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(Add_Event_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Age_Label)
+                .addGap(18, 18, 18)
+                .addComponent(Age_Select, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(Gender_Label)
+                .addGap(18, 18, 18)
+                .addComponent(Gender_Select, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(Event_Label_Add)
+                .addGap(18, 18, 18)
+                .addComponent(Time_Event_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Time_Event_Select, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(Save_Event)
+                .addContainerGap(257, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Add New Event", Add_Event_Panel);
+
+        Event_Label_Results.setText("Event:");
+
+        Event_Select.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Event_SelectActionPerformed(evt);
+            }
+        });
+
+        First_Name_Label.setText("First Name:");
+
+        First_Name_TextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                First_Name_TextFieldActionPerformed(evt);
+            }
+        });
+
+        Last_Name_Label.setText("Last Name:");
+
+        results.setText("Results:");
+
+        Metres_Label.setText("Metres:");
+
+        Minutes_Label.setText("Minutes:");
+
+        Cm_Label.setText("cm:");
+
+        Seconds_Label.setText("Seconds:");
+
+        Mm_Label.setText("mm:");
+
+        Milliseconds_Label.setText("Milliseconds:");
+
+        Save_Results.setText("Save Results");
+        Save_Results.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Save_ResultsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout Add_Results_PanelLayout = new javax.swing.GroupLayout(Add_Results_Panel);
         Add_Results_Panel.setLayout(Add_Results_PanelLayout);
         Add_Results_PanelLayout.setHorizontalGroup(
             Add_Results_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
+            .addGroup(Add_Results_PanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Add_Results_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Add_Results_PanelLayout.createSequentialGroup()
+                        .addComponent(Event_Label_Results)
+                        .addGap(18, 18, 18)
+                        .addComponent(Event_Select, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(First_Name_Label)
+                        .addGap(18, 18, 18)
+                        .addComponent(First_Name_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(Last_Name_Label)
+                        .addGap(18, 18, 18)
+                        .addComponent(Last_Name_Textfield, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(results)
+                    .addComponent(Metres_Label)
+                    .addComponent(Minutes_Label)
+                    .addComponent(Cm_Label)
+                    .addComponent(Seconds_Label)
+                    .addComponent(Mm_Label)
+                    .addComponent(Milliseconds_Label)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Save_Results))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         Add_Results_PanelLayout.setVerticalGroup(
             Add_Results_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGroup(Add_Results_PanelLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(Add_Results_PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Event_Label_Results)
+                    .addComponent(Event_Select, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(First_Name_Label)
+                    .addComponent(First_Name_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Last_Name_Label)
+                    .addComponent(Last_Name_Textfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addComponent(results)
+                .addGap(27, 27, 27)
+                .addComponent(Metres_Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Minutes_Label)
+                .addGap(40, 40, 40)
+                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(Cm_Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Seconds_Label)
+                .addGap(40, 40, 40)
+                .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(Mm_Label)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Milliseconds_Label)
+                .addGap(40, 40, 40)
+                .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(Save_Results)
+                .addContainerGap())
         );
 
         jTabbedPane.addTab("Add Event Results", Add_Results_Panel);
@@ -130,16 +300,57 @@ public class SportsDayGUI extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_View_Results_ButtonActionPerformed
 
+    private void Save_EventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_EventActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Save_EventActionPerformed
+
+    private void First_Name_TextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_First_Name_TextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_First_Name_TextFieldActionPerformed
+
+    private void Save_ResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Save_ResultsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Save_ResultsActionPerformed
+
+    private void Event_SelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Event_SelectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Event_SelectActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Add_Event_Panel;
     private javax.swing.JPanel Add_Results_Panel;
+    private javax.swing.JLabel Age_Label;
+    private javax.swing.JComboBox<String> Age_Select;
     private javax.swing.JLabel Choose_Label;
+    private javax.swing.JLabel Cm_Label;
+    private javax.swing.JLabel Event_Label_Add;
+    private javax.swing.JLabel Event_Label_Results;
+    private javax.swing.JComboBox<String> Event_Select;
+    private javax.swing.JLabel First_Name_Label;
+    private javax.swing.JTextField First_Name_TextField;
+    private javax.swing.JLabel Gender_Label;
+    private javax.swing.JComboBox<String> Gender_Select;
     private javax.swing.JPanel Home_Panel;
+    private javax.swing.JLabel Last_Name_Label;
+    private javax.swing.JTextField Last_Name_Textfield;
+    private javax.swing.JLabel Metres_Label;
+    private javax.swing.JLabel Milliseconds_Label;
+    private javax.swing.JLabel Minutes_Label;
+    private javax.swing.JLabel Mm_Label;
+    private javax.swing.JButton Save_Event;
+    private javax.swing.JButton Save_Results;
+    private javax.swing.JLabel Seconds_Label;
+    private javax.swing.JComboBox<String> Select_ComboBox;
+    private javax.swing.JComboBox<String> Time_Event_Select;
+    private javax.swing.JTextField Time_Event_TextField;
     private javax.swing.JButton View_Results_Button;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel results;
     // End of variables declaration//GEN-END:variables
 }
