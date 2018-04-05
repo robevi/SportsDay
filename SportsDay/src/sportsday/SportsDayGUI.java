@@ -5,6 +5,8 @@
  */
 package sportsday;
 
+import javax.swing.SpinnerNumberModel;
+
 /**
  *
  * @author Christi
@@ -53,13 +55,16 @@ public class SportsDayGUI extends javax.swing.JPanel {
         results = new javax.swing.JLabel();
         Metres_Label = new javax.swing.JLabel();
         Minutes_Label = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        resultField1= new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);
+        spinner1 = new javax.swing.JSpinner(resultField1);
         Cm_Label = new javax.swing.JLabel();
         Seconds_Label = new javax.swing.JLabel();
-        jSpinner2 = new javax.swing.JSpinner();
+        resultField2= new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);
+        spinner2 = new javax.swing.JSpinner(resultField2);
         Mm_Label = new javax.swing.JLabel();
         Milliseconds_Label = new javax.swing.JLabel();
-        jSpinner3 = new javax.swing.JSpinner();
+        resultField3 = new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);
+        spinner3 = new javax.swing.JSpinner(resultField3);
         Save_Results = new javax.swing.JButton();
 
         jTabbedPane.setPreferredSize(new java.awt.Dimension(800, 600));
@@ -240,9 +245,9 @@ public class SportsDayGUI extends javax.swing.JPanel {
                     .addComponent(Seconds_Label)
                     .addComponent(Mm_Label)
                     .addComponent(Milliseconds_Label)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Save_Results))
                 .addContainerGap(85, Short.MAX_VALUE))
         );
@@ -264,19 +269,19 @@ public class SportsDayGUI extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Minutes_Label)
                 .addGap(40, 40, 40)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(Cm_Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Seconds_Label)
                 .addGap(40, 40, 40)
-                .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(Mm_Label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Milliseconds_Label)
                 .addGap(40, 40, 40)
-                .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(spinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addComponent(Save_Results)
                 .addContainerGap())
@@ -346,11 +351,22 @@ public class SportsDayGUI extends javax.swing.JPanel {
     private javax.swing.JTextField Time_Event_TextField;
     private javax.swing.JButton View_Results_Button;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
     private javax.swing.JTabbedPane jTabbedPane;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel results;
+    private javax.swing.JSpinner spinner1;
+    private javax.swing.JSpinner spinner2;
+    private javax.swing.JSpinner spinner3;
     // End of variables declaration//GEN-END:variables
+    
+    //jspinner variables 
+    private Integer spinnerMax;
+    private Integer spinnerMin = 0;
+    private Integer spinnerInterval = 1;
+    private Integer spinnerValue = 0;
+    
+    private SpinnerNumberModel resultField1;
+    private SpinnerNumberModel resultField2;
+    private SpinnerNumberModel resultField3;
+    // End of jspinner variables  
 }

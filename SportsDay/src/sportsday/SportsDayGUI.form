@@ -295,9 +295,9 @@
                           <Component id="Seconds_Label" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="Mm_Label" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="Milliseconds_Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jSpinner1" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                          <Component id="jSpinner2" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                          <Component id="jSpinner3" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="spinner1" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="spinner2" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="spinner3" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                           <Component id="Save_Results" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="85" max="32767" attributes="0"/>
@@ -323,19 +323,19 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Minutes_Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jSpinner1" min="-2" max="-2" attributes="0"/>
+                      <Component id="spinner1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="Cm_Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Seconds_Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jSpinner2" min="-2" max="-2" attributes="0"/>
+                      <Component id="spinner2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="Mm_Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Milliseconds_Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jSpinner3" min="-2" max="-2" attributes="0"/>
+                      <Component id="spinner3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="44" max="32767" attributes="0"/>
                       <Component id="Save_Results" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -394,7 +394,11 @@
                 <Property name="text" type="java.lang.String" value="Minutes:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSpinner" name="jSpinner1">
+            <Component class="javax.swing.JSpinner" name="spinner1">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(resultField1)"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="resultField1= new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="Cm_Label">
               <Properties>
@@ -406,7 +410,11 @@
                 <Property name="text" type="java.lang.String" value="Seconds:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSpinner" name="jSpinner2">
+            <Component class="javax.swing.JSpinner" name="spinner2">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(resultField2)"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="resultField2= new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="Mm_Label">
               <Properties>
@@ -418,7 +426,11 @@
                 <Property name="text" type="java.lang.String" value="Milliseconds:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JSpinner" name="jSpinner3">
+            <Component class="javax.swing.JSpinner" name="spinner3">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(resultField3)"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="resultField3 = new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="Save_Results">
               <Properties>
