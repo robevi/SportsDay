@@ -5,22 +5,34 @@
  */
 package sportsday;
 
+import java.awt.Event;
+import java.util.ArrayList;
+
 /**
  *
  * @author Christi
  */
 public class SportsDay {
 
+    private ArrayList<Event> sportsDayEvents = new ArrayList<Event>();
+    
+    public SportsDay()
+    {
+     
+    }
+
     /**
      * getEventType
      * 
      * @param eventName
-     * @return eventName
+     * @return unit
      * 
      * returns eventName
      */
     public String getEventType(String eventName) {
-        return eventName;
+        Event event = getEvent(eventName); //gets the event with the correct name
+        String unit = event.getEventUnit();
+        return unit;
     }
     
     /**
@@ -32,7 +44,35 @@ public class SportsDay {
      * @param result 
      */
     public void addResult(String eventName, String fName, String lName, Double result) {
-        ;
+        Event event = getEvent(eventName);
+        String unit = event.getEventUnit();
+        return unit;
+    }
+    
+    public void createNewEvent(String eventName, String eventUnit) {
+        Event event = new Event(eventName, eventUnit);
+        sportsDayEvents.add(event);
+    }
+    
+    /**
+     * getEvent
+     * 
+     * @param name
+     * @return event
+     * 
+     * returns event in SportsDay
+     */
+    public Event getEvent(String name) {
+        Event event = null;
+        for(Event ev : sportsDayEvents)
+        {
+            if(ev.getEventName().equals(name))
+            {
+                System.out.println("found object: " + ev.getEventName().toString());
+                event = ev;
+            }
+        }
+        return event;
     }
     
     /**
