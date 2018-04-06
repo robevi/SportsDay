@@ -6,6 +6,10 @@
 package sportsday;
 
 import javax.swing.SpinnerNumberModel;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -373,4 +377,233 @@ public class SportsDayGUI extends javax.swing.JPanel {
     private SpinnerNumberModel resultField2;
     private SpinnerNumberModel resultField3;
     // End of jspinner variables  
+    
+    /**
+     * Method to validate length of a string to see if it fits between the min and max lengths.
+     * @PARAM String inputString        The actual string that is being tested.
+     * @PARAM Integer minLength         The minimum length of the string that will pass the test.
+     * @PARAM Integer maxLength         The maximum length of the string that will pass the test.
+     * @RETURN Boolean                  True if the input string is greater than or equal to minLength and less than or equal to maxLength, otherwise, false.
+     * 
+     * This method checks a strings length and returns boolean true or false if it passes the min/max length test.  It is used for validating name and event string
+     * length.
+     */
+    public  Boolean checkStringLength( String inputString, Integer minLength, Integer maxLength  )
+    {
+        int stringLength = inputString.length();
+        
+        if (stringLength >= minLength && stringLength <= maxLength){
+            System.out.println("pass");
+            return true;
+        }
+        
+        else{
+            System.out.println("fail");
+            return false;
+        }
+    }
+    
+     /**
+     * inner event listener class - private.  This class handles GUI Events
+     * 
+     * ===Save Event Button===
+     *  When the save event button is fired:
+     *  -the eventTitle string is passed to checkStringLength with a min length of 3 and a max length of 20.  If the string fails this test, an error box
+     *      is shown and the event title must be re-entered.
+     *  -otherwise, the eventName is constructed from the event title, age and gender.
+     *  -a new instance of Event is created within the instance of SportsDay, with the parameters eventName and eventUnit (which is either distance or time only).
+     *  -the instance of Event is added to the arrayList of Events in SportsDay
+     *  - the eventName is added to the select event combo boxes on the results tab and the add results tab.
+     *  
+     *  The event name is constructed in a way that produces a consistent naming format that does not need validating, apart from the string of event type -e.g. long jump.
+     * 
+     * ===Save Result Button===
+     * When the save result button is fired:
+     * -the fName and lName strings are passed to checkStringLength with a min length of 1 and a max length of 20.  If the string fails this test, an error box
+     *      is shown and the event title must be re-entered.
+     * -otherwise get the eventType String (time or distance)
+     * if the eventType is distance:
+     *      -get the values as type Number from the resultsFields 1,2 and 3 and convert the distance to Double metres e.g. 1.245 
+     *      -add the result to the event as follows: sportsDay.addResult(eventName, fName, lName, totalDist).  This call the addResult method and creates a new competitor, with result
+     *      in the arraylist of competitors for that particular instance of event
+     *      This means that each event object has the results data stored within the instance of the event and so mixing up of results is very difficult.
+     * if the eventType is time:
+     *      -get the values as type Number from the resultsFields 1,2 and 3 and convert the distance to Double time in seconds e.g. 36.245 
+     *      -add the result to the event as follows: sportsDay.addResult(eventName, fName, lName, totalTime).  This call the addResult method and creates a new competitor, with result
+     *      in the arraylist of competitors for that particular instance of event
+     *      This means that each event object has the results data stored within the instance of the event and so mixing up of results is very difficult.
+     * 
+     * ===selectEvent (from combo box on enter results tab)===
+     * -get the eventName
+     * -get the eventType
+     * -if the eventType is distance, set the label visibility so that mins, sec's, thous are invisible and M, cm and mm are visible.  Set the spinnerNumberModel params appropriately.
+     * -if the eventType is time, set the label visibility so that mins, sec's, thous are visible and M, cm and mm are invisible.  Set the spinnerNumberModel params appropriately.
+     * This means that labels are set correctly.  An alternative would have been to have different alternative spinners for distance and time.  This may have involved more code.
+     * Essentially all results are a Double - either metres or seconds.  This means that ordering results can be relatively simple.
+     * 
+     * ===viewResultsButton===
+     * -get the eventName
+     * -get the eventType
+     * -get the event instance by name
+     * - call the getResults() method of the event instance
+     * - display the results in the textArea
+     * 
+     */
+    
+        private class EventListener implements ActionListener{
+        public void actionPerformed(ActionEvent e){
+           
+        if(e.getSource() == saveEventButton){
+        //Manipulate strings so that event objects can be named correctly
+        //Events are named as follows:  u13girlshighjump; u15boys100m.  All lower case, no spaces.
+        System.out.println("saveEventButton fired");
+        
+        String title = eventTitle.getText();
+        Boolean test = checkStringLength(title,3,20);
+        if (test == false){
+           System.out.println("false part");
+           JOptionPane.showMessageDialog(new JFrame(),
+           "Error - event name needs to be between 3 and 20 characters in length",
+           "Event Name Error",
+           JOptionPane.ERROR_MESSAGE);
+
+           eventTitle.setText("");}
+        
+        else{
+        
+        String eventName = ages.getSelectedItem().toString().toLowerCase();
+        eventName = eventName + gender.getSelectedItem().toString().toLowerCase();
+        eventName = eventName + eventTitle.getText().toLowerCase();
+        //System.out.println(eventName);
+        String eventUnit = unit.getSelectedItem().toString().toLowerCase();
+        //System.out.println(eventUnit);
+        sportsDay.createNewEvent(eventName, eventUnit);//Create a new event in the sportsDay object.
+        selectEvent.addItem(eventName);
+        selectResultsEvent.addItem(eventName);
+    }
+    }
+    if(e.getSource() == saveResultButton){
+        System.out.println("selectEvent combofired");
+        String eventName = selectEvent.getSelectedItem().toString();
+        String fName = competitorFirstName.getText();
+        String lName = competitorLastName.getText();        
+        Boolean testfName = checkStringLength(fName,1,30);
+        Boolean testlName = checkStringLength(lName,1,30);
+        
+        if (testfName == false || testlName == false){
+           System.out.println("false part");
+           JOptionPane.showMessageDialog(new JFrame(),
+           "Error - first and lastname needs to be between 1 and 30 characters in length each",
+           "First Name Error",
+           JOptionPane.ERROR_MESSAGE);
+
+           eventTitle.setText("");}
+        else{
+        //String lName = competitorLastName.getText();
+        Double totalDist;
+        Double totalTime;
+        String eventType = sportsDay.getEventType(eventName);
+        System.out.println(eventType);
+        if(eventType.equals("distance")){
+            
+            //input verification here?
+            //String distance_M = resultField1.getText();
+            Number distance_M = resultField1.getNumber();
+            //Double distanceM = Double.parseDouble(distance_M);
+            Double distanceM = distance_M.doubleValue();//double from spinnernumber
+            //String distance_cm = resultField2.getText();
+            Number distance_cm = resultField2.getNumber();
+            //Double distancecm = Double.parseDouble(distance_cm);
+            Double distancecm = distance_cm.doubleValue();//double from spinnernumber
+            distancecm = distancecm * 0.01;
+            
+            Number distance_mm = resultField3.getNumber();
+            //String distance_mm = resultField3.getText();
+            //Double distancemm = Double.parseDouble(distance_mm);
+            Double distancemm = distance_mm.doubleValue();//double from spinnernumber
+            
+            distancemm = distancemm * 0.001;
+            totalDist = distanceM + distancecm + distancemm;//calculate the distance in metres
+            System.out.println(totalDist);
+            sportsDay.addResult(eventName, fName, lName, totalDist);
+            System.out.println(eventName);//TESTING
+            Event event = sportsDay.getEvent(eventName);//TESTING - get the event object
+            event.getResults();//TESTING Print the results for that object to the console
+    }
+    if(eventType.equals("time")){
+            //String time_M = resultField1.getText();
+            Number time_M = resultField1.getNumber();
+            //Double timeM = Double.parseDouble(time_M);
+            Double timeM = time_M.doubleValue();
+            timeM = timeM * 60;//convert mins to seconds
+            //String time_sec = resultField2.getText();
+            Number time_sec = resultField2.getNumber();
+            //Double timesec = Double.parseDouble(time_sec);
+            Double timesec = time_sec.doubleValue();
+            //String time_millisec = resultField3.getText();
+            Number time_millisec = resultField3.getNumber();
+            Double timemillisec = time_millisec.doubleValue();
+            
+            //Double timemillisec = Double.parseDouble(time_millisec);
+            timemillisec = timemillisec * 0.001;
+            totalTime = timeM + timesec + timemillisec;// calculate time in seconds
+            System.out.println(totalTime);
+            sportsDay.addResult(eventName, fName, lName, totalTime);
+    }
+    }
+    }
+    if(e.getSource() == selectEvent){
+        System.out.println("selectEvent combofired");
+        String eventName = selectEvent.getSelectedItem().toString();
+        String eventType = sportsDay.getEventType(eventName);
+        System.out.println(eventType);
+        if(eventType.equals("distance")){//.equals checks for value equality whereas == checks for is equal to - object.
+            System.out.println("Distance selected, changing label visibility");
+            minsLabel.setVisible(false);
+            secsLabel.setVisible(false);
+            msecsLabel.setVisible(false);
+            metresLabel.setVisible(true);
+            cmLabel.setVisible(true);
+            mmLabel.setVisible(true);
+            spinnerMax = 50;
+            resultField1.setMaximum(spinnerMax);
+            resultField1.setValue(0);
+            spinnerMax = 99;
+            resultField2.setMaximum(spinnerMax);
+            resultField2.setValue(0);
+            spinnerMax = 9;
+            resultField3.setMaximum(spinnerMax);
+            resultField3.setValue(0);
+           }
+        else if(eventType.equals("time")){
+            System.out.println("Time selected, changing label visibility");
+            minsLabel.setVisible(true);
+            secsLabel.setVisible(true);
+            msecsLabel.setVisible(true);
+            metresLabel.setVisible(false);
+            cmLabel.setVisible(false);
+            mmLabel.setVisible(false);
+            spinnerMax = 59;
+            resultField1.setMaximum(spinnerMax);
+            resultField1.setValue(0);
+            resultField2.setMaximum(spinnerMax);
+            resultField2.setValue(0);
+            spinnerMax = 999;
+            resultField3.setMaximum(spinnerMax);
+            resultField3.setValue(0);
+           }    
+          }
+    if(e.getSource() == viewResultsButton){
+        System.out.println("viewResultsButton combofired");
+        String eventName = selectResultsEvent.getSelectedItem().toString();
+        String eventType = sportsDay.getEventType(eventName);
+        Event event = sportsDay.getEvent(eventName);
+        String results = event.getResults();
+        
+        System.out.println(results);
+        textArea.setText(results);
+        }
+    }
+        }
+    
 }
