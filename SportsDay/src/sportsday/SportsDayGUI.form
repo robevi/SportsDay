@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -53,11 +53,11 @@
                           <Component id="jScrollPane1" min="-2" pref="509" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="Select_ComboBox" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="selectResultsEvent" alignment="0" max="32767" attributes="0"/>
                                   <Component id="Choose_Label" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="View_Results_Button" min="-2" max="-2" attributes="0"/>
+                              <Component id="viewResultsButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="276" max="32767" attributes="0"/>
@@ -70,10 +70,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Choose_Label" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="View_Results_Button" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="viewResultsButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="Select_ComboBox" min="-2" max="-2" attributes="0"/>
+                      <Component id="selectResultsEvent" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="257" max="-2" attributes="0"/>
                       <EmptySpace pref="215" max="32767" attributes="0"/>
@@ -87,15 +87,15 @@
                 <Property name="text" type="java.lang.String" value="Choose event to display results"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="View_Results_Button">
+            <Component class="javax.swing.JButton" name="viewResultsButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Results"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="View_Results_ButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewResultsButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="Select_ComboBox">
+            <Component class="javax.swing.JComboBox" name="selectResultsEvent">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="4">
@@ -119,7 +119,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                <Component class="javax.swing.JTextArea" name="textArea">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
@@ -150,13 +150,13 @@
                           <Component id="Age_Label" min="-2" max="-2" attributes="0"/>
                           <Component id="Gender_Label" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="Event_Label_Add" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Save_Event" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
+                          <Component id="saveEventButton" alignment="0" min="-2" pref="131" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="Age_Select" alignment="0" max="32767" attributes="0"/>
-                              <Component id="Gender_Select" alignment="0" pref="87" max="32767" attributes="0"/>
+                              <Component id="ages" alignment="0" max="32767" attributes="0"/>
+                              <Component id="gender" alignment="0" pref="87" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="Time_Event_Select" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Time_Event_TextField" alignment="0" min="-2" pref="306" max="-2" attributes="0"/>
+                          <Component id="unit" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="eventTitle" alignment="0" min="-2" pref="306" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="406" max="32767" attributes="0"/>
                   </Group>
@@ -168,19 +168,19 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Age_Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Age_Select" min="-2" max="-2" attributes="0"/>
+                      <Component id="ages" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="Gender_Label" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Gender_Select" min="-2" max="-2" attributes="0"/>
+                      <Component id="gender" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Component id="Event_Label_Add" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="Time_Event_TextField" min="-2" max="-2" attributes="0"/>
+                      <Component id="eventTitle" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="Time_Event_Select" min="-2" max="-2" attributes="0"/>
+                      <Component id="unit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="Save_Event" min="-2" max="-2" attributes="0"/>
+                      <Component id="saveEventButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="257" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -192,7 +192,7 @@
                 <Property name="text" type="java.lang.String" value="Age: (e.g. U15 - Under 15 year olds)"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="Age_Select">
+            <Component class="javax.swing.JComboBox" name="ages">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="9">
@@ -217,7 +217,7 @@
                 <Property name="text" type="java.lang.String" value="Gender:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="Gender_Select">
+            <Component class="javax.swing.JComboBox" name="gender">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -235,9 +235,9 @@
                 <Property name="text" type="java.lang.String" value="Event Title (e.g. Long Jump) and unit (i.e. Time hh:mm:ss and Distance M:cm): "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Time_Event_TextField">
+            <Component class="javax.swing.JTextField" name="eventTitle">
             </Component>
-            <Component class="javax.swing.JComboBox" name="Time_Event_Select">
+            <Component class="javax.swing.JComboBox" name="unit">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="2">
@@ -250,12 +250,12 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="Save_Event">
+            <Component class="javax.swing.JButton" name="saveEventButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Save Event"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Save_EventActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveEventButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -278,27 +278,27 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="Event_Label_Results" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="Event_Select" min="-2" pref="129" max="-2" attributes="0"/>
+                              <Component id="selectEvent" min="-2" pref="129" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="First_Name_Label" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="First_Name_TextField" min="-2" pref="129" max="-2" attributes="0"/>
+                              <Component id="competitorFirstName" min="-2" pref="129" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                               <Component id="Last_Name_Label" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="Last_Name_Textfield" min="-2" pref="129" max="-2" attributes="0"/>
+                              <Component id="competitorLastName" min="-2" pref="129" max="-2" attributes="0"/>
                           </Group>
                           <Component id="results" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Metres_Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Minutes_Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Cm_Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Seconds_Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Mm_Label" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Milliseconds_Label" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="metresLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="minsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="cmLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="secsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="mmLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="msecsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="spinner1" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                           <Component id="spinner2" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                           <Component id="spinner3" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                          <Component id="Save_Results" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="saveResultButton" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="85" max="32767" attributes="0"/>
                   </Group>
@@ -310,34 +310,34 @@
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Event_Label_Results" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Event_Select" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="selectEvent" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="First_Name_Label" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="First_Name_TextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="competitorFirstName" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="Last_Name_Label" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="Last_Name_Textfield" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="competitorLastName" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="results" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                      <Component id="Metres_Label" min="-2" max="-2" attributes="0"/>
+                      <Component id="metresLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Minutes_Label" min="-2" max="-2" attributes="0"/>
+                      <Component id="minsLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="spinner1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="Cm_Label" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Seconds_Label" min="-2" max="-2" attributes="0"/>
+                      <Component id="secsLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="spinner2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="Mm_Label" min="-2" max="-2" attributes="0"/>
+                      <Component id="mmLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Milliseconds_Label" min="-2" max="-2" attributes="0"/>
+                      <Component id="msecsLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="spinner3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="44" max="32767" attributes="0"/>
-                      <Component id="Save_Results" min="-2" max="-2" attributes="0"/>
+                      <Component id="saveResultButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -349,14 +349,14 @@
                 <Property name="text" type="java.lang.String" value="Event:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="Event_Select">
+            <Component class="javax.swing.JComboBox" name="selectEvent">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Event_SelectActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectEventActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -367,9 +367,9 @@
                 <Property name="text" type="java.lang.String" value="First Name:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="First_Name_TextField">
+            <Component class="javax.swing.JTextField" name="competitorFirstName">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="First_Name_TextFieldActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="competitorFirstNameActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="Last_Name_Label">
@@ -377,19 +377,22 @@
                 <Property name="text" type="java.lang.String" value="Last Name:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="Last_Name_Textfield">
+            <Component class="javax.swing.JTextField" name="competitorLastName">
             </Component>
             <Component class="javax.swing.JLabel" name="results">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Results:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Metres_Label">
+            <Component class="javax.swing.JLabel" name="metresLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Metres:"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="metresLabel.setVisible(false);"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="Minutes_Label">
+            <Component class="javax.swing.JLabel" name="minsLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Minutes:"/>
               </Properties>
@@ -400,12 +403,15 @@
                 <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="resultField1= new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="Cm_Label">
+            <Component class="javax.swing.JLabel" name="cmLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="cm:"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cmLabel.setVisible(false);"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="Seconds_Label">
+            <Component class="javax.swing.JLabel" name="secsLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Seconds:"/>
               </Properties>
@@ -416,12 +422,15 @@
                 <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="resultField2= new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="Mm_Label">
+            <Component class="javax.swing.JLabel" name="mmLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="mm:"/>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="mmLabel.setVisible(false);"/>
+              </AuxValues>
             </Component>
-            <Component class="javax.swing.JLabel" name="Milliseconds_Label">
+            <Component class="javax.swing.JLabel" name="msecsLabel">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Milliseconds:"/>
               </Properties>
@@ -432,12 +441,12 @@
                 <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="resultField3 = new SpinnerNumberModel(spinnerValue,spinnerMin,spinnerMax,spinnerInterval);"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JButton" name="Save_Results">
+            <Component class="javax.swing.JButton" name="saveResultButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Save Results"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Save_ResultsActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveResultButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
