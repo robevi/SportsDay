@@ -5,7 +5,6 @@
  */
 package sportsday;
 
-import java.awt.Event;
 import java.util.ArrayList;
 
 /**
@@ -45,8 +44,8 @@ public class SportsDay {
      */
     public void addResult(String eventName, String fName, String lName, Double result) {
         Event event = getEvent(eventName);
-        String unit = event.getEventUnit();
-        return unit;
+        System.out.println("Got Event");
+        event.addCompetitor(fName, lName, result); //Add a competitor object to the event.
     }
     
     public void createNewEvent(String eventName, String eventUnit) {
