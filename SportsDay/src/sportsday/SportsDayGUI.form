@@ -91,9 +91,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="View Results"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewResultsButtonActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="selectResultsEvent">
               <Properties>
@@ -254,9 +251,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Save Event"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveEventButtonActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -355,9 +349,6 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectEventActionPerformed"/>
-              </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
@@ -368,9 +359,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="competitorFirstName">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="competitorFirstNameActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="Last_Name_Label">
               <Properties>
@@ -445,9 +433,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Save Results"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveResultButtonActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>

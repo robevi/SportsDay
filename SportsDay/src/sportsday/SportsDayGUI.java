@@ -76,11 +76,6 @@ public class SportsDayGUI extends javax.swing.JPanel {
         Choose_Label.setText("Choose event to display results");
 
         viewResultsButton.setText("View Results");
-        viewResultsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewResultsButtonActionPerformed(evt);
-            }
-        });
 
         selectResultsEvent.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -136,11 +131,6 @@ public class SportsDayGUI extends javax.swing.JPanel {
         unit.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Time", "Distance" }));
 
         saveEventButton.setText("Save Event");
-        saveEventButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveEventButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout Add_Event_PanelLayout = new javax.swing.GroupLayout(Add_Event_Panel);
         Add_Event_Panel.setLayout(Add_Event_PanelLayout);
@@ -186,19 +176,7 @@ public class SportsDayGUI extends javax.swing.JPanel {
 
         Event_Label_Results.setText("Event:");
 
-        selectEvent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selectEventActionPerformed(evt);
-            }
-        });
-
         First_Name_Label.setText("First Name:");
-
-        competitorFirstName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                competitorFirstNameActionPerformed(evt);
-            }
-        });
 
         Last_Name_Label.setText("Last Name:");
 
@@ -217,11 +195,6 @@ public class SportsDayGUI extends javax.swing.JPanel {
         msecsLabel.setText("Milliseconds:");
 
         saveResultButton.setText("Save Results");
-        saveResultButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveResultButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout Add_Results_PanelLayout = new javax.swing.GroupLayout(Add_Results_Panel);
         Add_Results_Panel.setLayout(Add_Results_PanelLayout);
@@ -308,26 +281,6 @@ public class SportsDayGUI extends javax.swing.JPanel {
             .addComponent(jTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void viewResultsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewResultsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_viewResultsButtonActionPerformed
-
-    private void saveEventButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveEventButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_saveEventButtonActionPerformed
-
-    private void competitorFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_competitorFirstNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_competitorFirstNameActionPerformed
-
-    private void saveResultButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveResultButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_saveResultButtonActionPerformed
-
-    private void selectEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectEventActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_selectEventActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
