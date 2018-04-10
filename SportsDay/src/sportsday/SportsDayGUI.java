@@ -22,6 +22,14 @@ public class SportsDayGUI extends javax.swing.JPanel {
      */
     public SportsDayGUI() {
         initComponents();
+        EventListener listener = new EventListener();
+        EventListener listenera = new EventListener();
+        EventListener listenerb = new EventListener();
+        saveEventButton.addActionListener(listener);
+        selectResultsEvent.addActionListener(listenerb);
+        viewResultsButton.addActionListener(listenerb);
+        selectEvent.addActionListener(listenera);
+        saveResultButton.addActionListener(listenera);
     }
 
     /**
@@ -330,6 +338,8 @@ public class SportsDayGUI extends javax.swing.JPanel {
     private SpinnerNumberModel resultField2;
     private SpinnerNumberModel resultField3;
     // End of jspinner variables  
+    
+    private SportsDay sportsDay = new SportsDay();
     
     /**
      * Method to validate length of a string to see if it fits between the min and max lengths.
